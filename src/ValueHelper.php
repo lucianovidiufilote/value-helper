@@ -22,6 +22,7 @@ class ValueHelper
     public static function getClassFormNamespace($nameSpace, $depth = 1)
     {
         $array = explode('\\', $nameSpace);
-        return array_slice($array, -$depth, $depth);
+        $result = array_slice($array, -$depth, $depth);
+        return implode('\\', $result);
     }
 }
