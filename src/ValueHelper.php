@@ -18,4 +18,10 @@ class ValueHelper
     {
         return preg_replace('/[^0-9]/', '', $string);
     }
+
+    public static function getClassFormNamespace($nameSpace)
+    {
+        $array = explode('\\', $nameSpace);
+        return end($array);
+    }
 }
