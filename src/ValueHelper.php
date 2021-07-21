@@ -19,9 +19,9 @@ class ValueHelper
         return preg_replace('/[^0-9]/', '', $string);
     }
 
-    public static function getClassFormNamespace($nameSpace)
+    public static function getClassFormNamespace($nameSpace, $depth = 1)
     {
         $array = explode('\\', $nameSpace);
-        return end($array);
+        return array_slice($array, -$depth, $depth);
     }
 }
